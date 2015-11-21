@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="149.0" height="238" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<text style='fill: green; font-size: 16px;' x='5.0' y='226'> parse</text>
+<text style='fill: green; font-size: 16px;' x='65.0' y='226'> sentence</text>
+<text style='fill: blue; font-size: 16px;' x='22.28125' y='160'>JJ</text>
+<line style='stroke:black; stroke-width:1;' x1='27' y1='203' x2='27' y2='167' />
+<text style='fill: blue; font-size: 16px;' x='87.78125' y='160'>NN</text>
+<line style='stroke:black; stroke-width:1;' x1='99' y1='203' x2='99' y2='167' />
+<text style='fill: blue; font-size: 16px;' x='52.78125' y='94'>NP</text>
+<line style='stroke:black; stroke-width:1;' x1='27' y1='137' x2='63' y2='101' />
+<line style='stroke:black; stroke-width:1;' x1='99' y1='137' x2='63' y2='101' />
+<text style='fill: blue; font-size: 16px;' x='35.1328125' y='28'>parsent</text>
+<line style='stroke:black; stroke-width:1;' x1='63' y1='71' x2='63' y2='35' />
+</svg>

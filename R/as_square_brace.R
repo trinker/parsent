@@ -12,7 +12,7 @@
 #' @examples
 #' \dontrun{
 #' ## pass `as_square_brace` to an online parse tree:
-#' ## http://yohasebe.com/rsyntaxtre
+#' ## http://yohasebe.com/rsyntaxtree
 #' parse_ann <- parse_annotator()
 #' x <- parser("Really, I like chocolate because it is good.", parse_ann)
 #' xsquared <- as_square_brace(x)
