@@ -1,0 +1,31 @@
+---
+title: "testtree"
+header-includes:
+   - \usepackage{qtree}
+   - \usepackage{color}
+   - \usepackage{xcolor}   
+   - \newenvironment{dummy}{}{}
+output:
+    pdf_document:
+      keep_tex: true
+---
+
+```{r, echo=FALSE, results='asis'}
+library(parser)
+txt <- c(
+    "Really, I like chocolate because it is good.",
+    "It smells great.",
+    "Robots are rather evil and most are devoid of decency.",
+    "He is my friend.",
+    "Clifford the big red dog ate my lunch.",
+    "Profess Johns can not teach",
+    "",
+    NA
+)
+
+if(!exists('parse_ann')) {
+    parse_ann <- parse_annotator()
+}
+x <- parser(txt, parse_ann)
+as_square_brace_latex(x)
+```

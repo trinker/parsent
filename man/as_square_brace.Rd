@@ -28,7 +28,7 @@ parse.  These functions prepare the parse for use in other plotting venues.
 \examples{
 \dontrun{
 ## pass `as_square_brace` to an online parse tree:
-## http://yohasebe.com/rsyntaxtre
+## http://yohasebe.com/rsyntaxtree
 parse_ann <- parse_annotator()
 x <- parser("Really, I like chocolate because it is good.", parse_ann)
 xsquared <- as_square_brace(x)
@@ -62,7 +62,7 @@ webElem2$clickElement()
 
 ## LaTeX Version
 ## copy .Rmd from parser package
-treeloc <- system.file("exta_files/testtree.Rmd", package = "parser")
+treeloc <- system.file("extra_files/testtree.Rmd", package = "parser")
 file.copy(treeloc, getwd())
 
 ## look at .Rmd

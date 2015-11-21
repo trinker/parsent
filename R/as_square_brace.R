@@ -46,7 +46,7 @@
 #'
 #' ## LaTeX Version
 #' ## copy .Rmd from parser package
-#' treeloc <- system.file("exta_files/testtree.Rmd", package = "parser")
+#' treeloc <- system.file("extra_files/testtree.Rmd", package = "parser")
 #' file.copy(treeloc, getwd())
 #'
 #' ## look at .Rmd
@@ -57,7 +57,9 @@
 #' rmarkdown::render("testtree.Rmd")
 #' }
 as_square_brace <- function(x, ...){
-    m_gsub(c("(", ")"), c("[", "]"), gsub("(^\\(TOP )|\\)$", "", x))
+    out <- m_gsub(c("(", ")"), c("[", "]"), gsub("(^\\(TOP )|\\)$", "", x))
+    out[out == "NA"] <- NA
+    out
 }
 
 
