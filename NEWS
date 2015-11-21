@@ -1,0 +1,23 @@
+NEWS
+====
+
+Versioning
+----------
+
+Releases will be numbered with the following semantic versioning format:
+
+<major>.<minor>.<patch>
+
+And constructed with the following guidelines:
+
+* Breaking backward compatibility bumps the major (and resets the minor
+  and patch)
+* New additions without breaking backward compatibility bumps the minor
+  (and resets the patch)
+* Bug fixes and misc changes bumps the patch
+
+
+parsent 0.1.0
+----------------------------------------------------------------
+
+This package is a collection of tools used to parse sentences.  The package is a wrapper for the **NLP**/**openNLP** packages that simplifies and extends the user experience.
