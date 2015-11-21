@@ -62,8 +62,23 @@ descriptions are summarized in the table below:
 </tr>
 <tr class="odd">
 <td align="left"><code>get_phrase_type</code></td>
-<td align="left">extracting<code>| Extract phrases one step down the tree                    | |</code>get_phrase_type_regex<code>| extracting | Extract phrases at any level in the tree (uses regex)     | |</code>get_leaves<code>| extracting | Extract the leaves (tokens or words) from a phrase        | |</code>take`</td>
 <td align="left">extracting</td>
+<td align="left">Extract phrases one step down the tree</td>
+</tr>
+<tr class="even">
+<td align="left"><code>get_phrase_type_regex</code></td>
+<td align="left">extracting</td>
+<td align="left">Extract phrases at any level in the tree (uses regex)</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>get_leaves</code></td>
+<td align="left">extracting</td>
+<td align="left">Extract the leaves (tokens or words) from a phrase</td>
+</tr>
+<tr class="even">
+<td align="left"><code>take</code></td>
+<td align="left">extracting</td>
+<td align="left">Select indexed elements from a vector</td>
 </tr>
 </tbody>
 </table>
