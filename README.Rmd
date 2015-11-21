@@ -51,6 +51,7 @@ Functions typically fall into the task category of (1) parsing, (2) converting, 
 | `get_leaves`              | extracting | Extract the leaves (tokens or words) from a phrase        |
 | `take`                    | extracting | Select indexed elements from a vector                     |
 
+
 # Installation
 
 To download the development version of **parsent**:
