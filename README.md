@@ -8,7 +8,7 @@ Status](https://travis-ci.org/trinker/parsent.svg?branch=master)](https://travis
 Status](https://coveralls.io/repos/trinker/parsent/badge.svg?branch=master)](https://coveralls.io/r/trinker/parsent?branch=master)
 <a href="https://img.shields.io/badge/Version-0.1.0-orange.svg"><img src="https://img.shields.io/badge/Version-0.1.0-orange.svg" alt="Version"/></a>
 </p>
-<img src="inst/parsent_logo/r_parsent.png" width="200" alt="parsent Logo">
+<img src="inst/parsent_logo/r_parsent.png" width="200" height="200" alt="parsent Logo">
 
 **parsent** is a collection of tools used to parse sentences. The
 package is a wrapper for the **NLP**/**openNLP** packages that
