@@ -11,7 +11,7 @@
   cex.title = 0.9, asp = 0.5, ...)
 }
 \arguments{
-\item{x}{A \code{parsed_character} object (see \code{\link[parser]{parser}}.}
+\item{x}{A \code{parsed_character} object (see \code{\link[parsent]{parser}}.}
 
 \item{vertex.color}{The vertex color (see \code{?igraph::igraph_options}).}
 

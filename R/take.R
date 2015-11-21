@@ -1,7 +1,7 @@
 #' Take Elements From a Vector
 #'
 #' Take elements from a vector.  Useful for extracting an index from branches
-#' in a parse tree.
+#' in a parse tree, particularly, in a \pkg{magrittr} chain.
 #'
 #' @param x A vector of elements to select from.
 #' @param indices The indices to select.

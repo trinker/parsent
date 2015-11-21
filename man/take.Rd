@@ -16,7 +16,7 @@ Returns a subset of the original set of elements.
 }
 \description{
 Take elements from a vector.  Useful for extracting an index from branches
-in a parse tree.
+in a parse tree, particularly, in a \pkg{magrittr} chain.
 }
 \examples{
 take(list(1:4, LETTERS, rnorm(10)))

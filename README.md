@@ -14,10 +14,65 @@ Status](https://coveralls.io/repos/trinker/parsent/badge.svg?branch=master)](htt
 package is a wrapper for the **NLP**/**openNLP** packages that
 simplifies and extends the user experience.
 
+Function Usage
+==============
+
+Functions typically fall into the task category of (1) parsing, (2)
+converting, & (3) extracting. The main functions, task category, &
+descriptions are summarized in the table below:
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">Function</th>
+<th align="left">Task</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>parser</code></td>
+<td align="left">parsing</td>
+<td align="left">Parse sentences into phrases</td>
+</tr>
+<tr class="even">
+<td align="left"><code>parse_annotator</code></td>
+<td align="left">parsing</td>
+<td align="left">Generate <strong>OpenNLP</strong> parser required by <code>parser</code> function</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>as_tree</code></td>
+<td align="left">converting</td>
+<td align="left">Convert <code>parser</code> output into tree form</td>
+</tr>
+<tr class="even">
+<td align="left"><code>as_square_brace</code></td>
+<td align="left">converting</td>
+<td align="left">Convert <code>parser</code> output in square brace form (vs. round)</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>as_square_brace_latex</code></td>
+<td align="left">converting</td>
+<td align="left">Convert <code>parser</code> output LaTeX ready form</td>
+</tr>
+<tr class="even">
+<td align="left"><code>get_phrases</code></td>
+<td align="left">extracting</td>
+<td align="left">Extract <a href="https://en.wikipedia.org/wiki/Phrase_structure_grammar">phrases</a> from <code>parser</code> output</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>get_phrase_type</code></td>
+<td align="left">extracting<code>| Extract phrases one step down the tree                    | |</code>get_phrase_type_regex<code>| extracting | Extract phrases at any level in the tree (uses regex)     | |</code>get_leaves<code>| extracting | Extract the leaves (tokens or words) from a phrase        | |</code>take`</td>
+<td align="left">extracting</td>
+</tr>
+</tbody>
+</table>
+
 
 Table of Contents
 ============
 
+-   [Function Usage](#function-usage)
 -   [Installation](#installation)
 -   [Contact](#contact)
 -   [Demonstration](#demonstration)

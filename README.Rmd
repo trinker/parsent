@@ -33,6 +33,24 @@ knitr::opts_chunk$set(fig.path = "inst/figure/")
 
 **parsent** is a collection of tools used to parse sentences.  The package is a wrapper for the **NLP**/**openNLP** packages that simplifies and extends the user experience.
 
+# Function Usage
+
+Functions typically fall into the task category of (1) parsing, (2) converting, & (3) extracting.  The main functions, task category, & descriptions are summarized in the table below:
+
+
+| Function                  | Task       | Description                                               |
+|---------------------------|------------|-----------------------------------------------------------|
+| `parser`                  | parsing    | Parse sentences into phrases                              |
+| `parse_annotator`         | parsing    | Generate **OpenNLP** parser required by `parser` function |
+| `as_tree`                 | converting | Convert `parser` output into tree form                    |
+| `as_square_brace`         | converting | Convert `parser` output in square brace form (vs. round)  |
+| `as_square_brace_latex`   | converting | Convert `parser` output LaTeX ready form                  |
+| `get_phrases`             | extracting | Extract [phrases](https://en.wikipedia.org/wiki/Phrase_structure_grammar) from `parser` output                  |
+| `get_phrase_type`         | extracting`| Extract phrases one step down the tree                    |
+| `get_phrase_type_regex`   | extracting | Extract phrases at any level in the tree (uses regex)     |
+| `get_leaves`              | extracting | Extract the leaves (tokens or words) from a phrase        |
+| `take`                    | extracting | Select indexed elements from a vector                     |
+
 # Installation
 
 To download the development version of **parsent**:

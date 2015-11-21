@@ -112,7 +112,7 @@ print.parsed_character <- function(x, ...){
 #'
 #' Plots a plot.parsed_character object
 #'
-#' @param x A \code{parsed_character} object (see \code{\link[parser]{parser}}.
+#' @param x A \code{parsed_character} object (see \code{\link[parsent]{parser}}.
 #' @param vertex.color The vertex color (see \code{?igraph::igraph_options}).
 #' @param vertex.frame.color The vertex frame color (see \code{?igraph::igraph_options}).
 #' @param vertex.label.font The vertex label font (see \code{?igraph::igraph_options}).

@@ -11,7 +11,8 @@ get_leaves(x, regex = "@tokens")
 
 \item{regex}{A regular expression to extract tokens.  Default extracts tokens:
 \code{"(?<=\\s)[A-Za-z'-]+(?=\\))"}.  Use \code{"(?<=\\s)[A-Za-z'-]+(?=\\))"}
-to extract words.}
+to extract words.  Use short hand \code{regex = "@words"} to extract words or
+\code{regex = "@tokens"} to extract tokens.}
 }
 \value{
 Returns a list of vectors of extracted tokens.
