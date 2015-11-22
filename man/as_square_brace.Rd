@@ -25,6 +25,12 @@ vector appropriate for use in a LaTeX document.
 Many tree parsers (e.g., online, LaTeX, etc.) require square braces in the
 parse.  These functions prepare the parse for use in other plotting venues.
 }
+\note{
+When using \code{as_square_brace_latex}, the user will need to add the
+following LaTeX packages to the document: qtree, color, xcolor.  Additionally,
+the user will need to add the code chunk, \code{\\newenvironment\{dummy\}\{\}\{\}},
+to the preamble.
+}
 \examples{
 \dontrun{
 ## pass `as_square_brace` to an online parse tree:

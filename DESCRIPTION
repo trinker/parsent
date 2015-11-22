@@ -1,14 +1,15 @@
 Package: parsent
 Title: Sentence Parsing Tools
 Version: 0.1.0
-Authors@R: c(person("Tyler", "Rinker", email = "tyler.rinker@gmail.com", role = c("aut", "cre")))
+Authors@R: c(person("Tyler", "Rinker", email =
+        "tyler.rinker@gmail.com", role = c("aut", "cre")))
 Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
 Description: Tools to parse sentences.  A wrapper for 'NLP'/'openNLP'
         that simplifies and extends the user experience.
 Depends: R (>= 3.2.2)
 Imports: igraph, NLP, openNLP, qdapRegex, stringi, textshape, utils
 Suggests: testthat
-Date: 2015-11-20
+Date: 2015-11-22
 License: GPL-2
 LazyData: TRUE
 Roxygen: list(wrap = FALSE)

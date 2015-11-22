@@ -8,6 +8,10 @@
 #' @return \code{as_square_brace} - returns a vector appropriate for use in a
 #' many online parse tree generators.
 #' @export
+#' @note When using \code{as_square_brace_latex}, the user will need to add the
+#' following LaTeX packages to the document: qtree, color, xcolor.  Additionally,
+#' the user will need to add the code chunk, \code{\\newenvironment\{dummy\}\{\}\{\}},
+#' to the preamble.
 #' @rdname as_square_brace
 #' @examples
 #' \dontrun{

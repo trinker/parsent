@@ -41,10 +41,10 @@ txt <- c(
 
 parse_ann <- parse_annotator()
 (x <- parser(txt, parse_ann))
+par(mar = c(0,0,0,.7) + 0.2)
 plot(x[[2]])
 par(
     mfrow = c(3, 2),
-    oma = c(5,4,0,0) + 0.1,
     mar = c(0,0,1,1) + 0.1
 )
 lapply(x[1:5], plot)
