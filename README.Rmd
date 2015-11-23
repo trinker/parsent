@@ -105,6 +105,7 @@ if(!exists('parse_ann')) {
 
 ## Plotting
 ```{r}
+par(mar = c(0,0,0,.7) + 0.2)
 plot(x[[2]])
 ```
 

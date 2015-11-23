@@ -1,8 +1,8 @@
 #' Annotators
 #'
-#' A wrapper for \code{\link[openNLP]{Parse_Annotator}} and
-#' \code{\link[openNLP]{Maxent_Word_Token_Annotator}}.
+#' \code{word_annotator} - A wrapper for \code{\link[openNLP]{Maxent_Word_Token_Annotator}}.
 #'
+#' @param n The number of generations to go back (see \code{\link[base]{parent.frame}}).
 #' @return Returns an annotator for entities or words.
 #' @seealso \code{\link[openNLP]{Parse_Annotator}},
 #' \code{\link[openNLP]{Maxent_Word_Token_Annotator}}
@@ -13,6 +13,10 @@ word_annotator <- function(){
     openNLP::Maxent_Word_Token_Annotator()
 }
 
+#' Annotators
+#'
+#' \code{parse_annotator} - A wrapper for \code{\link[openNLP]{Parse_Annotator}}.
+#'
 #' @rdname annotators
 #' @export
 parse_annotator <- function(){
@@ -21,7 +25,25 @@ parse_annotator <- function(){
 }
 
 
-
+#' Annotators
+#'
+#' \code{easy_parse_annotator} - A wrapper for \code{\link[openNLP]{Parse_Annotator}}
+#' that checks for \code{.parse_ann} in the global environment.  If \code{.parse_ann}
+#' is not found a copy is assigned to the global environment for future sourcing.
+#' This is because the parse annotator often leds to a Java out of memory error
+#' if multiple instances are assigned.
+#'
+#' @rdname annotators
+#' @export
+#' @return \code{easy_parse_annotator} - Assigns a parse annotator to \code{.parse_ann}
+#' in the global nvironment if not found.
+easy_parse_annotator <- function(n=2){
+    if (!exists(".parse_ann", envir = parent.frame(n))) {
+        .parse_ann <- parse_annotator()
+        assign(".parse_ann", .parse_ann, envir = parent.frame(n))
+    }
+    get(".parse_ann", envir = parent.frame(n))
+}
 
 check_models_package <- function(){
     outcome <- "openNLPmodels.en" %in% list.files(.libPaths())

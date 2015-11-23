@@ -21,7 +21,9 @@
 #'     NA
 #' )
 #'
-#' parse_ann <- parse_annotator()
+#' if(!exists('parse_ann')) {
+#'     parse_ann <- parse_annotator()
+#' }
 #' x <- parser(txt, parse_ann)
 #' as_tree(x)
 #' }

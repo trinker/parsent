@@ -25,7 +25,9 @@
 #'     NA
 #' )
 #'
-#' parse_ann <- parse_annotator()
+#' if(!exists('parse_ann')) {
+#'     parse_ann <- parse_annotator()
+#' }
 #' (x <- parser(txt, parse_ann))
 #' par(mar = c(0,0,0,.7) + 0.2)
 #' plot(x[[2]])
@@ -35,7 +37,7 @@
 #' )
 #' lapply(x[1:5], plot)
 #' }
-parser <- function(text.var, parse.annotator, word.annotator = word_annotator(),
+parser <- function(text.var, parse.annotator = easy_parse_annotator(), word.annotator = word_annotator(),
     element.chunks = floor(2000 * (23.5/mean(sapply(text.var, nchar), na.rm = TRUE)))){
 
     len <- length(text.var)

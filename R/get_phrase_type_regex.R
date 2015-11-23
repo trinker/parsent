@@ -28,7 +28,9 @@
 #'     NA
 #' )
 #'
-#' parse_ann <- parse_annotator()
+#' if(!exists('parse_ann')) {
+#'     parse_ann <- parse_annotator()
+#' }
 #' (x <- parser(txt, parse_ann))
 #'
 #' get_phrase_type_regex(x, "VP")

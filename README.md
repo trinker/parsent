@@ -180,6 +180,7 @@ Parsing
 Plotting
 --------
 
+    par(mar = c(0,0,0,.7) + 0.2)
     plot(x[[2]])
 
 ![](inst/figure/unnamed-chunk-6-1.png)
