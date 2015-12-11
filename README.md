@@ -14,8 +14,26 @@ Status](https://coveralls.io/repos/trinker/parsent/badge.svg?branch=master)](htt
 package is a wrapper for the **NLP**/**openNLP** packages that
 simplifies and extends the user experience.
 
+
+Table of Contents
+============
+
+-   [Function Usage](#function-usage)
+-   [Installation](#installation)
+-   [Contact](#contact)
+-   [Demonstration](#demonstration)
+    -   [Load the Packages/Data](#load-the-packagesdata)
+    -   [Create Annotator](#create-annotator)
+    -   [Parsing](#parsing)
+    -   [Plotting](#plotting)
+    -   [Get Subject, Verb, and Direct Object](#get-subject-verb-and-direct-object)
+        -   [Subject](#subject)
+        -   [Predicate Verb](#predicate-verb)
+        -   [Direct Object](#direct-object)
+
 Function Usage
-==============
+============
+
 
 Functions typically fall into the task category of (1) parsing, (2)
 converting, & (3) extracting. The main functions, task category, &
@@ -83,26 +101,8 @@ descriptions are summarized in the table below:
 </tbody>
 </table>
 
-
-Table of Contents
-============
-
--   [Function Usage](#function-usage)
--   [Installation](#installation)
--   [Contact](#contact)
--   [Demonstration](#demonstration)
-    -   [Load the Packages/Data](#load-the-packagesdata)
-    -   [Create Annotator](#create-annotator)
-    -   [Parsing](#parsing)
-    -   [Plotting](#plotting)
-    -   [Get Subject, Verb, and Direct Object](#get-subject-verb-and-direct-object)
-        -   [Subject](#subject)
-        -   [Predicate Verb](#predicate-verb)
-        -   [Direct Object](#direct-object)
-
 Installation
 ============
-
 
 To download the development version of **parsent**:
 
