@@ -11,7 +11,7 @@ output:
 ---
 
 ```{r, echo=FALSE, results='asis'}
-library(parser)
+library(parsent)
 txt <- c(
     "Really, I like chocolate because it is good.",
     "It smells great.",

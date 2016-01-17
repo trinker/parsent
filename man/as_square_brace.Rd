@@ -74,7 +74,7 @@ webElem2$clickElement()
 
 ## LaTeX Version
 ## copy .Rmd from parser package
-treeloc <- system.file("extra_files/testtree.Rmd", package = "parser")
+treeloc <- system.file("extra_files/testtree.Rmd", package = "parsent")
 file.copy(treeloc, getwd())
 
 ## look at .Rmd
