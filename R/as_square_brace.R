@@ -38,12 +38,16 @@
 #'     browserName = "firefox"
 #' )
 #'
+#' ## MIGHT NEED:
+#' ## RSelenium::startServer()
+#'
 #' remDr$open()
 #'
 #' ## Now we pass the url from above and the page is opened
 #' remDr$navigate("http://yohasebe.com/rsyntaxtree/")
 #'
 #' webElem <- remDr$findElement("css", "textarea[id='data']")
+#' webElem$clearElement()
 #' webElem$sendKeysToElement(list(xsquared)); Sys.sleep(.5)
 #'
 #'

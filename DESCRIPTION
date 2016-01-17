@@ -5,11 +5,21 @@ Authors@R: c(person("Tyler", "Rinker", email =
         "tyler.rinker@gmail.com", role = c("aut", "cre")))
 Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
 Description: Tools to parse sentences.  A wrapper for 'NLP'/'openNLP'
-        that simplifies and extends the user experience.
-Depends: R (>= 3.2.2)
-Imports: igraph, NLP, openNLP, qdapRegex, stringi, textshape, utils
-Suggests: testthat
-Date: 2015-12-10
+    that simplifies and extends the user experience.
+Depends:
+    R (>= 3.2.2)
+Imports:
+    igraph,
+    NLP,
+    openNLP,
+    qdapRegex,
+    stringi,
+    textshape,
+    utils
+Suggests:
+    testthat
+Date: 2016-01-16
 License: GPL-2
 LazyData: TRUE
 Roxygen: list(wrap = FALSE)
+RoxygenNote: 5.0.1
