@@ -1,4 +1,4 @@
-parsent
+parsent   [![Follow](https://img.shields.io/twitter/follow/tylerrinker.svg?style=social)](https://twitter.com/intent/follow?screen_name=tylerrinker)
 ============
 
 
@@ -39,7 +39,12 @@ Functions typically fall into the task category of (1) parsing, (2)
 converting, & (3) extracting. The main functions, task category, &
 descriptions are summarized in the table below:
 
-<table>
+<table style="width:140%;">
+<colgroup>
+<col width="38%" />
+<col width="18%" />
+<col width="83%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Function</th>
@@ -113,16 +118,15 @@ run `R CMD INSTALL` on it, or use the **pacman** package to install the
 development version:
 
     if (!require("pacman")) install.packages("pacman")
-    pacman::p_load_gh("trinker/parsent")
+    pacman::p_load_gh(c("trinker/textshape", "trinker/parsent"))
 
 Contact
 =======
 
-You are welcome to: 
-* submit suggestions and bug-reports at: <https://github.com/trinker/parsent/issues> 
-* send a pull request on: <https://github.com/trinker/parsent/> 
-* compose a friendly e-mail to: <tyler.rinker@gmail.com>
-
+You are welcome to:    
+- submit suggestions and bug-reports at: <https://github.com/trinker/parsent/issues>    
+- send a pull request on: <https://github.com/trinker/parsent/>    
+- compose a friendly e-mail to: <tyler.rinker@gmail.com>    
 
 Demonstration
 =============
