@@ -9,7 +9,7 @@ Description: Tools to parse sentences.  A wrapper for 'NLP'/'openNLP'
 Depends: R (>= 3.2.2)
 Imports: igraph, NLP, openNLP, qdapRegex, stringi, textshape, utils
 Suggests: testthat
-Date: 2016-04-30
+Date: 2017-02-20
 License: GPL-2
 LazyData: TRUE
 Roxygen: list(wrap = FALSE)
