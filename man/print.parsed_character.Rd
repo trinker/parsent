@@ -14,4 +14,3 @@
 \description{
 Prints a parsed_character object
 }
-

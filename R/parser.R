@@ -3,10 +3,16 @@
 #' A wrapper for \pkg{NLP},/\pkg{openNLP}'s named sentence parsing tools.
 #'
 #' @param text.var The text string variable.
+#' @param engine The backend pat of speech tagger, either "openNLP" or "coreNLP".
+#' The default "openNLP" uses the \pkg{openNLP} package.  If the user has the
+#' Stanford CoreNLP suite (\file{http://stanfordnlp.github.io/CoreNLP/})
+#' installed this can be used as the tagging backend instead.
 #' @param parse.annotator A parse annotator.  See \code{?parse_annotator}.  Due
 #' to \pkg{Java} memory allocation limits the user must generate the annotator
-#' and supply it directly to \code{parser}.
-#' @param word.annotator A word annotator.
+#' and supply it directly to \code{parser} (only used if \code{lib = "openNLP"}).
+#' @param word.annotator A word annotator (only used if \code{lib = "openNLP"}).
+#' @param java.path The path the where \pkg{Java} is located (only used if
+#' \code{lib = "coreNLP"}).
 #' @param element.chunks The number of elements to include in a chunk. Chunks are
 #' passed through an \code{\link[base]{lapply}} and size is kept within a tolerance
 #' because of memory allocation in the tagging process with \pkg{Java}.
@@ -25,19 +31,34 @@
 #'     NA
 #' )
 #'
+#' ## openNLP parser
 #' if(!exists('parse_ann')) {
 #'     parse_ann <- parse_annotator()
 #' }
-#' (x <- parser(txt, parse_ann))
+#'
+#' (x2 <- parser(txt, engine = 'openNLP',  parse.annotator = parse_ann))
+#' dev.new()
+#' par(
+#'     mfrow = c(3, 2),
+#'     mar = c(0,0,1,1) + 0.1
+#' )
+#' frame(); text(.5, .5, "openNLP", cex=2)
+#' lapply(x2[1:5], plot)
+#'
+#' ## coreNLP parser
+#' (x <- parser(txt, engine = "coreNLP"))
+#'
 #' par(mar = c(0,0,0,.7) + 0.2)
 #' plot(x[[2]])
 #' par(
 #'     mfrow = c(3, 2),
 #'     mar = c(0,0,1,1) + 0.1
 #' )
+#' frame(); text(.5, .5, "coreNLP", cex=2)
 #' lapply(x[1:5], plot)
 #' }
-parser <- function(text.var, parse.annotator = easy_parse_annotator(), word.annotator = word_annotator(),
+parser <- function(text.var, engine = "openNLP", parse.annotator = easy_parse_annotator(),
+    word.annotator = word_annotator(), java.path = "java",
     element.chunks = floor(2000 * (23.5/mean(sapply(text.var, nchar), na.rm = TRUE)))){
 
     len <- length(text.var)
@@ -61,7 +82,11 @@ parser <- function(text.var, parse.annotator = easy_parse_annotator(), word.anno
 
     ## loop through the chunks and tag them
     out <- unlist(lapply(text_list, function(x){
-        x <- parsify(x, word.annotator, parse.annotator)
+        switch(engine,
+            coreNLP = {x <- core_parsify(x)},
+            openNLP = {x <- open_parsify(x, word.annotator, parse.annotator)},
+            stop("`engine` must be either \"openNLP\" or \"coreNLP\".")
+        )
         gc()
         x
     }))
@@ -76,8 +101,7 @@ parser <- function(text.var, parse.annotator = easy_parse_annotator(), word.anno
     })
 }
 
-
-parsify <- function(text.var, word, parse, ...){
+open_parsify <- function(text.var, word, parse, ...){
 
     #text.var <- gsub("-+", " ", text.var)
     text.var <- gsub("^\\s+|\\s+$", "", text.var)
@@ -94,6 +118,34 @@ parsify <- function(text.var, word, parse, ...){
     sapply(p$features, `[[`, "parse")
 
 }
+
+
+core_parsify <- function (text.var,
+    stanford.tagger = coreNLPsetup::coreNLP_loc(), java.path = "java", ...) {
+
+    if (!file.exists(stanford.tagger)) {
+        coreNLPsetup::check_stanford_installed(...)
+    }
+
+    text.var <- gsub("[.?!](?!$)", " ", gsub("(?<=[.?!])[.?!]+$", "", text.var, perl = TRUE), perl = TRUE)
+
+    #message("\nAnalyzing text for sentiment...\n")
+
+    cmd <- sprintf(
+        "%s -cp \"%s/*\" -mx5g edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators \"tokenize,ssplit,parse\" -ssplit.eolonly",
+        #"%s -cp \"%s/*\" -mx5g edu.stanford.nlp.sentiment.SentimentPipeline -stdin",
+        java.path, stanford.tagger
+    )
+
+    results <- system(cmd, input = text.var, intern = TRUE, ignore.stderr = TRUE)
+
+    gsub("^\\(ROOT", "(TOP", gsub("\\s+", " ", Map(function(b, e){paste(results[b:e], collapse="")},
+        grep("^\\(ROOT", results),
+        grep("^root\\(ROOT", results) - 2
+    )))
+
+}
+
 
 
 #' Prints a parsed_character Object

@@ -26,10 +26,10 @@ knit_hooks$set(htmlcap = function(before, options, envir) {
     }
     })
 knitr::opts_knit$set(self.contained = TRUE, cache = FALSE)
-knitr::opts_chunk$set(fig.path = "inst/figure/")
+knitr::opts_chunk$set(fig.path = "tools/figure/")
 ```
 
-<img src="inst/parsent_logo/r_parsent.png" width="200" height="200" alt="parsent Logo">  
+![](tools/parsent_logo/r_parsent.png)
 
 **parsent** is a collection of tools used to parse sentences.  The package is a wrapper for the **NLP**/**openNLP** packages that simplifies and extends the user experience.
 

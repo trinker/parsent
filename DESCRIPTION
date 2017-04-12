@@ -7,10 +7,10 @@ Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
 Description: Tools to parse sentences.  A wrapper for 'NLP'/'openNLP'
         that simplifies and extends the user experience.
 Depends: R (>= 3.2.2)
-Imports: igraph, NLP, openNLP, qdapRegex, stringi, textshape, utils
+Imports: coreNLPsetup, igraph, NLP, openNLP, qdapRegex, stringi, textshape, utils
 Suggests: testthat
-Date: 2017-02-20
+Date: 2017-04-11
 License: GPL-2
 LazyData: TRUE
 Roxygen: list(wrap = FALSE)
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

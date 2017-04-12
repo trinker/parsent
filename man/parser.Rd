@@ -4,18 +4,28 @@
 \alias{parser}
 \title{Parse Sentences}
 \usage{
-parser(text.var, parse.annotator = easy_parse_annotator(),
-  word.annotator = word_annotator(), element.chunks = floor(2000 *
-  (23.5/mean(sapply(text.var, nchar), na.rm = TRUE))))
+parser(text.var, engine = "openNLP",
+  parse.annotator = easy_parse_annotator(),
+  word.annotator = word_annotator(), java.path = "java",
+  element.chunks = floor(2000 * (23.5/mean(sapply(text.var, nchar), na.rm =
+  TRUE))))
 }
 \arguments{
 \item{text.var}{The text string variable.}
 
+\item{engine}{The backend pat of speech tagger, either "openNLP" or "coreNLP".
+The default "openNLP" uses the \pkg{openNLP} package.  If the user has the
+Stanford CoreNLP suite (\file{http://stanfordnlp.github.io/CoreNLP/})
+installed this can be used as the tagging backend instead.}
+
 \item{parse.annotator}{A parse annotator.  See \code{?parse_annotator}.  Due
 to \pkg{Java} memory allocation limits the user must generate the annotator
-and supply it directly to \code{parser}.}
+and supply it directly to \code{parser} (only used if \code{lib = "openNLP"}).}
 
-\item{word.annotator}{A word annotator.}
+\item{word.annotator}{A word annotator (only used if \code{lib = "openNLP"}).}
+
+\item{java.path}{The path the where \pkg{Java} is located (only used if
+\code{lib = "coreNLP"}).}
 
 \item{element.chunks}{The number of elements to include in a chunk. Chunks are
 passed through an \code{\link[base]{lapply}} and size is kept within a tolerance
@@ -39,19 +49,32 @@ txt <- c(
     NA
 )
 
+## openNLP parser
 if(!exists('parse_ann')) {
     parse_ann <- parse_annotator()
 }
-(x <- parser(txt, parse_ann))
+
+(x2 <- parser(txt, engine = 'openNLP',  parse.annotator = parse_ann))
+dev.new()
+par(
+    mfrow = c(3, 2),
+    mar = c(0,0,1,1) + 0.1
+)
+frame(); text(.5, .5, "openNLP", cex=2)
+lapply(x2[1:5], plot)
+
+## coreNLP parser
+(x <- parser(txt, engine = "coreNLP"))
+
 par(mar = c(0,0,0,.7) + 0.2)
 plot(x[[2]])
 par(
     mfrow = c(3, 2),
     mar = c(0,0,1,1) + 0.1
 )
+frame(); text(.5, .5, "coreNLP", cex=2)
 lapply(x[1:5], plot)
 }
 }
 \keyword{parse}
 \keyword{sentence}
-

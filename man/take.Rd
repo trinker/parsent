@@ -45,4 +45,3 @@ get_phrase_type(x, "NP") \%>\%
     get_leaves()
 }
 }
-

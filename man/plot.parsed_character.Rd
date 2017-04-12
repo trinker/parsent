@@ -44,10 +44,9 @@
 \description{
 Plots a plot.parsed_character object
 }
-\author{
-StackOverflow's \href{http://stackoverflow.com/users/2415684/thetime}{TheTime} and Tyler Rinker <tyler.rinker@gmail.com>.
-}
 \references{
 \url{http://stackoverflow.com/a/33536291/1000343}
 }
-
+\author{
+StackOverflow's \href{http://stackoverflow.com/users/2415684/thetime}{TheTime} and Tyler Rinker <tyler.rinker@gmail.com>.
+}

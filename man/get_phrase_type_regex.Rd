@@ -82,11 +82,10 @@ get_phrase_type_regex(x, "VP") \%>\%
     get_leaves()
 }
 }
-\author{
-\href{http://stackoverflow.com/users/2206004/hwnd}{Jason Gray} and Tyler Rinker <tyler.rinker@gmail.com>.
-}
 \references{
 \url{http://stackoverflow.com/a/32899764/1000343}
 }
+\author{
+\href{http://stackoverflow.com/users/2206004/hwnd}{Jason Gray} and Tyler Rinker <tyler.rinker@gmail.com>.
+}
 \keyword{phrase}
-
