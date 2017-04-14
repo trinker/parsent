@@ -100,8 +100,10 @@ if(!exists('parse_ann')) {
 
 ## Parsing
 ```{r}
-(x <- parser(txt, parse_ann))
+(x <- parser(txt, parse.annotator = parse_ann))
 ```
+
+Note that the user may choose to use CoreNLP as a backend by setting `engine = "coreNLP"`.  To ensure that coreNLP is setup properly use `check_setup`.
 
 ## Plotting
 ```{r}

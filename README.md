@@ -8,7 +8,8 @@ Status](https://travis-ci.org/trinker/parsent.svg?branch=master)](https://travis
 Status](https://coveralls.io/repos/trinker/parsent/badge.svg?branch=master)](https://coveralls.io/r/trinker/parsent?branch=master)
 <a href="https://img.shields.io/badge/Version-0.1.0-orange.svg"><img src="https://img.shields.io/badge/Version-0.1.0-orange.svg" alt="Version"/></a>
 </p>
-<img src="inst/parsent_logo/r_parsent.png" width="200" height="200" alt="parsent Logo">
+
+![](tools/parsent_logo/r_parsent.png)
 
 **parsent** is a collection of tools used to parse sentences. The
 package is a wrapper for the **NLP**/**openNLP** packages that
@@ -39,69 +40,69 @@ Functions typically fall into the task category of (1) parsing, (2)
 converting, & (3) extracting. The main functions, task category, &
 descriptions are summarized in the table below:
 
-<table style="width:140%;">
+<table>
 <colgroup>
-<col width="38%" />
-<col width="18%" />
-<col width="83%" />
+<col width="27%" />
+<col width="12%" />
+<col width="59%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Function</th>
-<th align="left">Task</th>
-<th align="left">Description</th>
+<th>Function</th>
+<th>Task</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><code>parser</code></td>
-<td align="left">parsing</td>
-<td align="left">Parse sentences into phrases</td>
+<td><code>parser</code></td>
+<td>parsing</td>
+<td>Parse sentences into phrases</td>
 </tr>
 <tr class="even">
-<td align="left"><code>parse_annotator</code></td>
-<td align="left">parsing</td>
-<td align="left">Generate <strong>OpenNLP</strong> parser required by <code>parser</code> function</td>
+<td><code>parse_annotator</code></td>
+<td>parsing</td>
+<td>Generate <strong>OpenNLP</strong> parser required by <code>parser</code> function</td>
 </tr>
 <tr class="odd">
-<td align="left"><code>as_tree</code></td>
-<td align="left">converting</td>
-<td align="left">Convert <code>parser</code> output into tree form</td>
+<td><code>as_tree</code></td>
+<td>converting</td>
+<td>Convert <code>parser</code> output into tree form</td>
 </tr>
 <tr class="even">
-<td align="left"><code>as_square_brace</code></td>
-<td align="left">converting</td>
-<td align="left">Convert <code>parser</code> output in square brace form (vs. round)</td>
+<td><code>as_square_brace</code></td>
+<td>converting</td>
+<td>Convert <code>parser</code> output in square brace form (vs. round)</td>
 </tr>
 <tr class="odd">
-<td align="left"><code>as_square_brace_latex</code></td>
-<td align="left">converting</td>
-<td align="left">Convert <code>parser</code> output LaTeX ready form</td>
+<td><code>as_square_brace_latex</code></td>
+<td>converting</td>
+<td>Convert <code>parser</code> output LaTeX ready form</td>
 </tr>
 <tr class="even">
-<td align="left"><code>get_phrases</code></td>
-<td align="left">extracting</td>
-<td align="left">Extract <a href="https://en.wikipedia.org/wiki/Phrase_structure_grammar">phrases</a> from <code>parser</code> output</td>
+<td><code>get_phrases</code></td>
+<td>extracting</td>
+<td>Extract <a href="https://en.wikipedia.org/wiki/Phrase_structure_grammar">phrases</a> from <code>parser</code> output</td>
 </tr>
 <tr class="odd">
-<td align="left"><code>get_phrase_type</code></td>
-<td align="left">extracting</td>
-<td align="left">Extract phrases one step down the tree</td>
+<td><code>get_phrase_type</code></td>
+<td>extracting</td>
+<td>Extract phrases one step down the tree</td>
 </tr>
 <tr class="even">
-<td align="left"><code>get_phrase_type_regex</code></td>
-<td align="left">extracting</td>
-<td align="left">Extract phrases at any level in the tree (uses regex)</td>
+<td><code>get_phrase_type_regex</code></td>
+<td>extracting</td>
+<td>Extract phrases at any level in the tree (uses regex)</td>
 </tr>
 <tr class="odd">
-<td align="left"><code>get_leaves</code></td>
-<td align="left">extracting</td>
-<td align="left">Extract the leaves (tokens or words) from a phrase</td>
+<td><code>get_leaves</code></td>
+<td>extracting</td>
+<td>Extract the leaves (tokens or words) from a phrase</td>
 </tr>
 <tr class="even">
-<td align="left"><code>take</code></td>
-<td align="left">extracting</td>
-<td align="left">Select indexed elements from a vector</td>
+<td><code>take</code></td>
+<td>extracting</td>
+<td>Select indexed elements from a vector</td>
 </tr>
 </tbody>
 </table>
@@ -158,7 +159,7 @@ Create Annotator
 Parsing
 -------
 
-    (x <- parser(txt, parse_ann))
+    (x <- parser(txt, parse.annotator = parse_ann))
 
     ## [[1]]
     ## [1] "(TOP (S (S (ADVP (RB Really))(, ,) (NP (PRP I)) (VP (VBP like) (NP (NN chocolate)) (SBAR (IN because) (S (NP (PRP it)) (VP (VBZ is) (ADJP (JJ good)))))))(. .) (NP (PRP It)) (VP (VBZ smells) (ADJP (JJ great)))(. .)))"
@@ -181,13 +182,17 @@ Parsing
     ## [[7]]
     ## [1] NA
 
+Note that the user may choose to use CoreNLP as a backend by setting
+`engine = "coreNLP"`. To ensure that coreNLP is setup properly use
+`check_setup`.
+
 Plotting
 --------
 
     par(mar = c(0,0,0,.7) + 0.2)
     plot(x[[2]])
 
-![](inst/figure/unnamed-chunk-6-1.png)
+![](tools/figure/unnamed-chunk-6-1.png)
 
     par(
         mfrow = c(3, 2),
@@ -195,7 +200,7 @@ Plotting
     )
     invisible(lapply(x[1:5], plot))
 
-![](inst/figure/unnamed-chunk-7-1.png)
+![](tools/figure/unnamed-chunk-7-1.png)
 
 Get Subject, Verb, and Direct Object
 ------------------------------------
