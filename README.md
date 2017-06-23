@@ -119,7 +119,11 @@ run `R CMD INSTALL` on it, or use the **pacman** package to install the
 development version:
 
     if (!require("pacman")) install.packages("pacman")
-    pacman::p_load_gh(c("trinker/textshape", "trinker/parsent"))
+    pacman::p_load_gh(c(
+        "trinker/textshape", 
+        "trinker/coreNLPsetup",          
+        "trinker/parsent"
+    ))
 
 Contact
 =======
