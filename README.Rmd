@@ -60,7 +60,11 @@ Download the [zip ball](https://github.com/trinker/parsent/zipball/master) or [t
 
 ```r
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load_gh(c("trinker/textshape", "trinker/parsent"))
+pacman::p_load_gh(c(
+    "trinker/textshape", 
+    "trinker/coreNLPsetup",          
+    "trinker/parsent"
+))
 ```
 
 # Contact
