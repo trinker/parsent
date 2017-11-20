@@ -56,7 +56,7 @@ check_models_package <- function(){
         } else {
             message("Attempting to install `openNLPmodels.en`.")
             utils::install.packages(
-                "http://datacube.wu.ac.at/src/contrib/openNLPmodels.en_1.5-2.tar.gz",
+                "http://datacube.wu.ac.at/src/contrib/openNLPmodels.en_1.5-1.tar.gz",
                 repos=NULL,
                 type="source"
             )
