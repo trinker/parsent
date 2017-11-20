@@ -81,7 +81,7 @@ get_phrase_type_regex <- function(x, phrase) {
 
 
 get_regex_phrase_helper <- function(x, phrase) {
-    if (is.na(x)) return(x)
+    if (is.na(x) | length(x) == 0) return(x)
     unlist(regmatches(x, gregexpr(build_regex_parse(phrase), x, perl=TRUE)))
 }
 
