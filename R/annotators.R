@@ -45,26 +45,53 @@ easy_parse_annotator <- function(n=2){
     get(".parse_ann", envir = parent.frame(n))
 }
 
-check_models_package <- function(){
+check_models_package <- function(version = NULL){
+
+    root <- 'http://datacube.wu.ac.at/src/contrib'
+
+    if (is.null(version)) {
+        page <- try(readLines(root))
+        version <- try({
+            hit <- grep('openNLPmodels.en', page, value = TRUE)
+            unlist(qdapRegex::ex_between(hit, 'openNLPmodels.en_', '.tar.gz'))[1]
+        })
+        if (inherits(version, 'try-catch')) version <- '1.5-1'
+
+    }
+
     outcome <- "openNLPmodels.en" %in% list.files(.libPaths())
+
     if (!outcome) {
-        message(paste0("Well it appears `openNLPmodels.en` is not installed.\n",
-            "This package is necessary in order to use the `parsent` package.\n\nWould you like me to try and fetch it?"))
+
+        message(paste0(
+            "Well it appears `openNLPmodels.en` is not installed.\n",
+            "This package is necessary in order to use the `parsent` package.\n\nWould you like me to try and fetch it?"
+        ))
+
         ans <- utils::menu(c("Yes", "No"))
+
         if (ans == "2") {
+
             stop("Sentence parsing aborted.  Please install `openNLPmodels.en`")
+
         } else {
+
             message("Attempting to install `openNLPmodels.en`.")
             utils::install.packages(
-                "http://datacube.wu.ac.at/src/contrib/openNLPmodels.en_1.5-1.tar.gz",
+                file.path(root, sprintf("openNLPmodels.en_%s.tar.gz", version)),
                 repos=NULL,
                 type="source"
             )
+
             outcome <- "openNLPmodels.en" %in% list.files(.libPaths())
+
             if (outcome) {
                 return(TRUE)
             } else {
-                stop("Failed to install `openNLPmodels.en`.  Please install `openNLPmodels.en` manually.")
+                stop(sprintf(
+                    "Failed to install `openNLPmodels.en`.  Please install `openNLPmodels.en` manually.\n%s",
+                    root
+                ))
             }
         }
     }
